@@ -1,0 +1,31 @@
+﻿<Window x:Class="EisChanger.Views.LogView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EisChanger.Views"
+        mc:Ignorable="d"
+        Title="LogView" Height="300" Width="300">
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="{x:Static SystemParameters.CaptionHeight}"
+                      ResizeBorderThickness="{x:Static SystemParameters.WindowResizeBorderThickness}" />
+    </WindowChrome.WindowChrome>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <!--タイトルバーボタン-->
+        <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Margin="0,5,5,0"
+                    HorizontalAlignment="Right" VerticalAlignment="Top" Height="18" Width="20">
+            <Button Content="r" Style="{DynamicResource CaptionButtonStyleKey}" HorizontalAlignment="Right" />
+        </StackPanel>
+        <DockPanel Grid.Row="1">
+            <StackPanel DockPanel.Dock="Bottom">
+                <Button Content="Apply" Command="{Binding ApplyCommand}" HorizontalAlignment="Right" Padding="10,4" Margin="20,10" Style="{DynamicResource ButtonStyleKey}" />
+            </StackPanel>
+            <TextBox Padding="10,5" Margin="5" BorderBrush="Black" BorderThickness="1"></TextBox>
+        </DockPanel>
+
+    </Grid>
+</Window>
